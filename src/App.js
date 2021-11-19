@@ -15,7 +15,7 @@ let App = (props) => {
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
-                <div className='content'>
+                <div className='app-wrapper-content'>
                     <Routes>
                         <Route path='/Profile' component={Profile}/>
                         <Route path='/Dialogs' component={Dialogs}/>
