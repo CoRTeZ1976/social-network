@@ -2,32 +2,35 @@ import React from "react";
 import navClasses from './Navbar.module.css'
 import {NavLink} from "react-router-dom";
 
+const setActive = ({ isActive }) => isActive ? navClasses.activeLink : '';
+
 const Navbar = (props) => {
-    return (
-        <nav className={navClasses.nav}>
 
-            <div className={navClasses.item}>
-                <NavLink to='/Profile' activeclassname={navClasses.activeLink}>Profile</NavLink>
-            </div>
+	return (
+		<nav className={navClasses.nav}>
 
-            <div className={navClasses.item}>
-                <NavLink to='/Dialogs' activeclassname={navClasses.activeLink}>Messages</NavLink>
-            </div>
+			<div className={navClasses.item}>
+				<NavLink to='/Profile' className={setActive}>Profile</NavLink>
+			</div>
 
-            <div className={navClasses.item}>
-                <NavLink to='/News' activeclassname={navClasses.activeLink}>News</NavLink>
-            </div>
+			<div className={navClasses.item}>
+				<NavLink to='/Dialogs' className={setActive}>Messages</NavLink>
+			</div>
 
-            <div className={navClasses.item}>
-                <NavLink to='/Music' activeclassname={navClasses.activeLink}>Music</NavLink>
-            </div>
+			<div className={navClasses.item}>
+				<NavLink to='/News' className={setActive}>News</NavLink>
+			</div>
 
-            <div className={navClasses.item}>
-                <NavLink to='/Settings' activeclassname={navClasses.activeLink}>Settings</NavLink>
-            </div>
+			<div className={navClasses.item}>
+				<NavLink to='/Music' className={setActive}>Music</NavLink>
+			</div>
 
-        </nav>
-    );
+			<div className={navClasses.item}>
+				<NavLink to='/Settings' className={setActive}>Settings</NavLink>
+			</div>
+
+		</nav>
+	);
 }
 
 export default Navbar;

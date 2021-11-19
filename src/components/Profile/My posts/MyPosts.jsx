@@ -7,7 +7,7 @@ const MyPosts = (props) => {
 			<Post message='Hey! How are you?' like='3'/>
 			<Post message='Hey! I am fine. And you?' like='5'/>
 			<Post message='I am fine' like='1'/>
-			<textarea>123</textarea>
+			<textarea defaultValue="some text"></textarea>
 			<button>Add post</button>
 		</div>
 	);
