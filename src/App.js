@@ -10,23 +10,23 @@ import Settings from "./components/Settings/Settings";
 
 
 let App = (props) => {
-    return (
-        <BrowserRouter>
-            <div className='app-wrapper'>
-                <Header/>
-                <Navbar/>
-                <div className='app-wrapper-content'>
-                    <Routes>
-                        <Route path='/Profile' component={Profile}/>
-                        <Route path='/Dialogs' component={Dialogs}/>
-                        <Route path='/News' component={News}/>
-                        <Route path='/Music' component={Music}/>
-                        <Route path='/Settings' component={Settings}/>
-                    </Routes>
-                </div>
-            </div>
-        </BrowserRouter>
-    );
+	return (
+		<BrowserRouter>
+			<div className='app-wrapper'>
+				<Header/>
+				<Navbar/>
+				<div className='app-wrapper-content'>
+					<Routes>
+						<Route exact path='Profile' element={<Profile/>}/>
+						<Route exact path='Dialogs' element={<Dialogs/>}/>
+						<Route exact path='News' element={<News/>}/>
+						<Route exact path='Music' element={<Music/>}/>
+						<Route exact path='Settings' element={<Settings/>}/>
+					</Routes>
+				</div>
+			</div>
+		</BrowserRouter>
+	);
 }
 
 export default App;
