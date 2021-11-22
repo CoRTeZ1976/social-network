@@ -6,8 +6,8 @@ import Post from "../Profile/My posts/Posts/Post";
 
 const Dialogs = (props) => {
 
-	let dialogs = props.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
-	let messages = props.messages.map(m => <Messages message={m.message}/>)
+	let dialogs = props.dialogs.dialogsData.map(d => <DialogItem name={d.name} id={d.id}/>);
+	let messages = props.dialogs.messagesData.map(m => <Messages message={m.message}/>)
 
 	return (
 		<div className={dialogsClasses.dialogs}>
