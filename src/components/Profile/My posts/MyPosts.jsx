@@ -5,10 +5,8 @@ import Post from "./Posts/Post";
 
 const MyPosts = (props) => {
 
-	let properties = Object.values(props);
+	let posts = props.posts.map( p => <Post message={p.message} likes={p.likes}/> );
 
-	let posts = properties[0].map( p => <Post message={p.message} likes={p.likes}/> );
-	
 	return (
 		<div>
 			<div>

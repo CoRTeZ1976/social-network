@@ -7,6 +7,9 @@ import News from "./components/News/News";
 import Dialogs from "./components/Dialogs/Dialogs";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
+import Post from "./components/Profile/My posts/Posts/Post";
+import React from "react";
+
 
 
 let App = (props) => {
@@ -17,8 +20,8 @@ let App = (props) => {
 				<Navbar/>
 				<div className='app-wrapper-content'>
 					<Routes>
-						<Route exact path='Profile' element={<Profile/>}/>
-						<Route exact path='Dialogs' element={<Dialogs/>}/>
+						<Route exact path='Profile' element={<Profile posts={props.data.posts}/>}/>
+						<Route exact path='Dialogs' element={<Dialogs dialogs={props.data.dialogs} messages={props.data.messages}/>}/>
 						<Route exact path='News' element={<News/>}/>
 						<Route exact path='Music' element={<Music/>}/>
 						<Route exact path='Settings' element={<Settings/>}/>
