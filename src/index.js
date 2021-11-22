@@ -34,7 +34,7 @@ let properties = {
 
 ReactDOM.render(
     <React.StrictMode>
-        <App data={properties}/>
+        <App posts={postsData} dialogs={dialogsData} messages={messagesData}/>
     </React.StrictMode>,
     document.getElementById('root')
 );
