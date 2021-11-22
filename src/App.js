@@ -8,7 +8,6 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import React from "react";
-import Sidebar from "./components/Sidebar/Sidebar";
 
 
 let App = (props) => {
@@ -17,7 +16,6 @@ let App = (props) => {
 			<div className='app-wrapper'>
 				<Header/>
 				<Navbar/>
-
 				<div className='app-wrapper-content'>
 					<Routes>
 						<Route exact path='Profile' element={<Profile posts={props.state.profilePage}/>}/>

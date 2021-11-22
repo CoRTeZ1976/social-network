@@ -29,9 +29,9 @@ const Navbar = (props) => {
 			<div className={navClasses.item}>
 				<NavLink to='/Settings' className={setActive}>Settings</NavLink>
 			</div>
-
-			<Sidebar/>
-
+			<div className={navClasses.item}>
+				<Sidebar/>
+			</div>
 		</nav>
 	);
 }

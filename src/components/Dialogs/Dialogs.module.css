@@ -11,3 +11,7 @@
 .dialogs .messages {
     padding: 15px;
 }
+
+.dialogItems {
+    border-right: 2px solid black;
+}
