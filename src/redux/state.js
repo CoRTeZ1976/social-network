@@ -24,6 +24,10 @@ let state = {
 		],
 	},
 
+	sidebar: {
+
+	},
+
 }
 
 export default state;
