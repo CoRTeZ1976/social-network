@@ -18,7 +18,10 @@ let App = (props) => {
 				<Navbar/>
 				<div className='app-wrapper-content'>
 					<Routes>
-						<Route exact path='Profile' element={<Profile posts={props.state.profilePage}/>}/>
+						<Route exact path='Profile' element={<Profile
+							posts={props.state.profilePage}
+							addPost={props.addPost}
+						/>}/>
 						<Route exact path='Dialogs' element={<Dialogs dialogs={props.state.dialogsPage}/>}/>
 						<Route exact path='News' element={<News/>}/>
 						<Route exact path='Music' element={<Music/>}/>
