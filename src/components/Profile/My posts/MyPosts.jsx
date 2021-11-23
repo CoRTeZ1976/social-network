@@ -1,6 +1,6 @@
 import React from "react";
 import Post from "./Posts/Post";
-import {updateNewPostText} from "../../../redux/state";
+
 
 
 const MyPosts = (props) => {

@@ -2,14 +2,13 @@ import React from "react";
 import dialogsClasses from './Dialogs.module.css'
 import DialogItem from "./Dialog/DialogItem";
 import Messages from "./Dialog/Messages/Messages";
-import {Route, Routes} from "react-router-dom";
+
 
 
 const Dialogs = (props) => {
 
 	let dialogs = props.dialogs.dialogsData.map(d => <DialogItem name={d.name} id={d.id}/>);
 
-	let path = 'Dialogs' + dialogs.id;
 
 	return (
 		<div className={dialogsClasses.dialogs}>
@@ -17,7 +16,11 @@ const Dialogs = (props) => {
 				{dialogs}
 			</div>
 			<div>
-				<Messages messageData={props.dialogs.messagesData}/>
+				<Messages
+					messageData={props.dialogs.messagesData}
+					sendMessage={props.sendMessage}
+					updateNewMessageText={props.updateNewMessageText}
+				/>
 			</div>
 		</div>
 	);

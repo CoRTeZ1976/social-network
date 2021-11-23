@@ -7,11 +7,19 @@ const Messages = (props) => {
 
 	let messages = props.messageData.map(m => <div>{m.message}</div>)
 
-	let message = React.createRef();
+	let newMessage = React.createRef();
 
 	let sendMessage = () => {
-		let textMessage = message.current.value;
+		debugger;
+		props.sendMessage();
+
 	};
+
+	let onMessageTextChange = () => {
+		debugger;
+		let text = newMessage.current.value;
+		props.updateNewMessageText(text);
+	}
 
 	return (
 		<div className={messagesClasses.message}>
@@ -19,7 +27,8 @@ const Messages = (props) => {
 			<div className={dialogsClasses.messages}>
 				{messages}
 				<div>
-					<textarea defaultValue="" ref={message}></textarea>
+					<textarea onChange={onMessageTextChange}
+					          ref={newMessage}/>
 				</div>
 				<div>
 					<button onClick={sendMessage}>Send</button>

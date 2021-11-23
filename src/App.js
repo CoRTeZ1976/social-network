@@ -24,7 +24,11 @@ let App = (props) => {
 							addPost={props.addPost}
 							updateNewPostText={props.updateNewPostText}
 						/>}/>
-						<Route exact path='Dialogs' element={<Dialogs dialogs={props.state.dialogsPage}/>}/>
+						<Route exact path='Dialogs' element={<Dialogs
+							dialogs={props.state.dialogsPage}
+							sendMessage={props.sendMessage}
+							updateNewMessageText={props.updateNewMessageText}
+						/>}/>
 						<Route exact path='News' element={<News/>}/>
 						<Route exact path='Music' element={<Music/>}/>
 						<Route exact path='Settings' element={<Settings/>}/>
