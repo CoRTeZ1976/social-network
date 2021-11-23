@@ -8,6 +8,7 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import React from "react";
+import {updateNewPostText} from "./redux/state";
 
 
 let App = (props) => {
@@ -21,6 +22,7 @@ let App = (props) => {
 						<Route exact path='Profile' element={<Profile
 							posts={props.state.profilePage}
 							addPost={props.addPost}
+							updateNewPostText={props.updateNewPostText}
 						/>}/>
 						<Route exact path='Dialogs' element={<Dialogs dialogs={props.state.dialogsPage}/>}/>
 						<Route exact path='News' element={<News/>}/>
