@@ -56,7 +56,7 @@ export let sendMessage = () => {
 		message: state.dialogsPage.newMessageText,
 		likes: 0
 	}
-	state.dialogsPage.postsData.push(newMessage);
+	state.dialogsPage.messagesData.push(newMessage);
 	state.dialogsPage.newMessageText = '';
 	rerenderEntireTree(state);
 };
