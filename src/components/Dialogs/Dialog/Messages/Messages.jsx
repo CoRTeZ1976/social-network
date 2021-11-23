@@ -6,14 +6,19 @@ import dialogsClasses from "../../Dialogs.module.css";
 const Messages = (props) => {
 
 	let messages = props.messageData.map(m => <div>{m.message}</div>)
+
 	let newMessage = React.createRef();
+
 	let sendMessage = () => {
-		props.sendMessage();
+		props.dispatch({type: 'SEND-MESSAGE'});
 	};
 
 	let onMessageTextChange = () => {
 		let text = newMessage.current.value;
-		props.updateNewMessageText(text);
+		props.dispatch({
+			type: 'UPDATE-NEW-MESSAGE-TEXT',
+			newText: text,
+		});
 	}
 
 	return (

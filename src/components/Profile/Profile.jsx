@@ -1,6 +1,6 @@
 import React from "react";
 import MyPosts from "./My posts/MyPosts";
-import {updateNewPostText} from "../../redux/state";
+
 
 
 const Profile = (props) => {
@@ -10,8 +10,7 @@ const Profile = (props) => {
 			My posts
 			<MyPosts
 				posts={props.profilePage}
-				addPost={props.addPost}
-				updateNewPostText={props.updateNewPostText}
+				dispatch={props.dispatch}
 			/>
 		</div>
 	);
