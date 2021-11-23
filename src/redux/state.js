@@ -1,4 +1,6 @@
-import {rerenderEntireTree} from "../render";
+let rerenderEntireTree = () => {
+
+};
 
 let state = {
 
@@ -29,7 +31,7 @@ let state = {
 
 	sidebar: {},
 
-}
+};
 
 export let addPost = () => {
 	let newPost = {
@@ -40,11 +42,15 @@ export let addPost = () => {
 	state.profilePage.postsData.push(newPost);
 	state.profilePage.newPostText = '';
 	rerenderEntireTree(state);
-}
+};
 
 export let updateNewPostText = (newText) => {
 	state.profilePage.newPostText = newText;
 	rerenderEntireTree(state);
-}
+};
+
+export const subscribe = (observer) => {
+	rerenderEntireTree = observer;
+};
 
 export default state;

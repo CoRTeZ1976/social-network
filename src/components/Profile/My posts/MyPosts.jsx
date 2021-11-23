@@ -11,19 +11,19 @@ const MyPosts = (props) => {
 
 	let addPost = () => {
 		props.addPost();
-		props.updateNewPostText('');
 	};
 
-	let nonPostChange = () => {
+	let onPostChange = () => {
 		let text = newPostElement.current.value;
 		props.updateNewPostText(text);
+
 	}
 
 	return (
 		<div>
 			<div>
 				<textarea
-					onChange={nonPostChange}
+					onChange={onPostChange}
 					ref={newPostElement}
 				/>
 			</div>

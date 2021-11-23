@@ -20,7 +20,7 @@ let App = (props) => {
 				<div className='app-wrapper-content'>
 					<Routes>
 						<Route exact path='Profile' element={<Profile
-							posts={props.state.profilePage}
+							profilePage={props.state.profilePage}
 							addPost={props.addPost}
 							updateNewPostText={props.updateNewPostText}
 						/>}/>
