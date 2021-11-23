@@ -4,6 +4,7 @@ import dialogsClasses from "../../Dialogs.module.css";
 
 
 const Messages = (props) => {
+
 	let messages = props.messageData.map(m => <div>{m.message}</div>)
 	let newMessage = React.createRef();
 	let sendMessage = () => {
@@ -23,6 +24,7 @@ const Messages = (props) => {
 				<div>
 					<textarea onChange={onMessageTextChange}
 					          ref={newMessage}
+					          value={props.newMessageText}
 					/>
 				</div>
 				<div>

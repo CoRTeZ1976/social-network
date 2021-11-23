@@ -18,6 +18,7 @@ const Dialogs = (props) => {
 			<div>
 				<Messages
 					messageData={props.dialogs.messagesData}
+					newMessageText={props.dialogs.newMessageText}
 					sendMessage={props.sendMessage}
 					updateNewMessageText={props.updateNewMessageText}
 				/>
