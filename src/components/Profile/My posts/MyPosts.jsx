@@ -12,17 +12,18 @@ const MyPosts = (props) => {
 	let addPost = () => {
 		let postText = newPostElement.current.value;
 		props.addPost(postText);
+		newPostElement.current.value = '';
 	};
 
 	return (
 		<div>
 			<div>
-				<textarea defaultValue="" ref={ newPostElement }></textarea>
+				<textarea defaultValue="" ref={newPostElement}></textarea>
 			</div>
 			<div>
-				<button onClick={ addPost }>Add post</button>
+				<button onClick={addPost}>Add post</button>
 			</div>
-			{ posts }
+			{posts}
 		</div>
 	);
 }
