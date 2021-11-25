@@ -1,7 +1,7 @@
 import React from "react";
 import messagesClasses from './Messages.module.css'
 import dialogsClasses from "../../Dialogs.module.css";
-import {sendMessageActionCreator, updateNewMessageTextActionCreator} from "../../../../redux/store";
+import {sendMessageActionCreator, updateNewMessageTextActionCreator} from "../../../../redux/dialogs-reducer";
 
 
 const Messages = (props) => {
@@ -25,9 +25,11 @@ const Messages = (props) => {
 			<div className={dialogsClasses.messages}>
 				{messages}
 				<div>
-					<textarea onChange={onMessageTextChange}
-					          ref={newMessage}
-					          value={props.newMessageText}
+					<textarea
+						placeholder={'Enter your message'}
+						onChange={onMessageTextChange}
+						ref={newMessage}
+						value={props.newMessageText}
 					/>
 				</div>
 				<div>

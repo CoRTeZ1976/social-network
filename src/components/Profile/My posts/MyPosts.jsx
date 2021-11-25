@@ -1,6 +1,6 @@
 import React from "react";
 import Post from "./Posts/Post";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/store";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profile-reducer";
 
 
 
@@ -23,6 +23,7 @@ const MyPosts = (props) => {
 		<div>
 			<div>
 				<textarea
+					placeholder={'Enter your text'}
 					onChange={onPostChange}
 					ref={newPostElement}
 					value={props.posts.newPostText}
