@@ -12,7 +12,6 @@ import React from "react";
 
 
 let App = (props) => {
-
 	return (
 		<BrowserRouter>
 			<div className='app-wrapper'>
@@ -21,12 +20,10 @@ let App = (props) => {
 				<div className='app-wrapper-content'>
 					<Routes>
 						<Route exact path='Profile' element={<Profile
-							profilePage={props.state.profilePage}
-							dispatch={props.dispatch}
+							store={props.store}
 						/>}/>
 						<Route exact path='Dialogs' element={<Dialogs
-							dialogs={props.state.dialogsPage}
-							dispatch={props.dispatch}
+							store={props.store}
 						/>}/>
 						<Route exact path='News' element={<News/>}/>
 						<Route exact path='Music' element={<Music/>}/>

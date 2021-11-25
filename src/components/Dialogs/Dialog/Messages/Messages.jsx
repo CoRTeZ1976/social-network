@@ -6,17 +6,17 @@ import {sendMessageActionCreator, updateNewMessageTextActionCreator} from "../..
 
 const Messages = (props) => {
 
-	let messages = props.messageData.map(m => <div>{m.message}</div>)
+	let messages = props.messagesData.map(m => <div>{m.message}</div>)
 
 	let newMessage = React.createRef();
 
 	let sendMessage = () => {
-		props.dispatch(sendMessageActionCreator());
+		props.sendMessage();
 	};
 
 	let onMessageTextChange = () => {
 		let text = newMessage.current.value;
-		props.dispatch(updateNewMessageTextActionCreator(text));
+		props.updateNewMessageText(text);
 	}
 
 	return (
