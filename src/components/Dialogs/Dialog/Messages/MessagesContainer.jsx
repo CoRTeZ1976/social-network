@@ -1,9 +1,10 @@
 import React from "react";
 
 import {sendMessageActionCreator, updateNewMessageTextActionCreator} from "../../../../redux/dialogs-reducer";
+import Messages from "./Messages";
 
 
-const Messages = (props) => {
+const MessagesContainer = (props) => {
 
 	let state = props.store.getState()
 
@@ -13,7 +14,7 @@ const Messages = (props) => {
 
 	let onMessageTextChange = (text) => {
 		let action = updateNewMessageTextActionCreator(text);
-		props.dispatch(action);
+		props.store.dispatch(action);
 	}
 
 	return <Messages
@@ -24,4 +25,4 @@ const Messages = (props) => {
 	/>;
 }
 
-export default Messages;
+export default MessagesContainer;

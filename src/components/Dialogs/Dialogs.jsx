@@ -6,8 +6,10 @@ import MessagesContainer from "./Dialog/Messages/MessagesContainer";
 
 
 const Dialogs = (props) => {
-debugger
-	let dialogs = props.dialogs.dialogsData.map(d => <DialogItem name={d.name} id={d.id}/>);
+
+	let state = props.store.getState();
+
+	let dialogs = state.dialogsPage.dialogsData.map(d => <DialogItem name={d.name} id={d.id}/>);
 
 	return (
 		<div className={dialogsClasses.dialogs}>
