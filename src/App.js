@@ -10,7 +10,6 @@ import Settings from "./components/Settings/Settings";
 import React from "react";
 
 
-
 let App = (props) => {
 
 	return (
@@ -20,12 +19,8 @@ let App = (props) => {
 				<Navbar/>
 				<div className='app-wrapper-content'>
 					<Routes>
-						<Route exact path='Profile' element={<Profile
-							store={props.store}
-						/>}/>
-						<Route exact path='Dialogs' element={<Dialogs
-							store={props.store}
-						/>}/>
+						<Route exact path='Profile' element={<Profile/>}/>
+						<Route exact path='Dialogs' element={<Dialogs/>}/>
 						<Route exact path='News' element={<News/>}/>
 						<Route exact path='Music' element={<Music/>}/>
 						<Route exact path='Settings' element={<Settings/>}/>
