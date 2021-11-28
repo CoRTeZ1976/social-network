@@ -8,6 +8,8 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import React from "react";
+import UsersContainer from "./components/Users/UsersContainer";
+
 
 
 let App = (props) => {
@@ -20,6 +22,7 @@ let App = (props) => {
 				<Routes>
 					<Route exact path='Profile' element={<Profile/>}/>
 					<Route exact path='Dialogs' element={<DialogsContainer/>}/>
+					<Route exact path='UsersContainer' element={<UsersContainer/>}/>
 					<Route exact path='News' element={<News/>}/>
 					<Route exact path='Music' element={<Music/>}/>
 					<Route exact path='Settings' element={<Settings/>}/>
