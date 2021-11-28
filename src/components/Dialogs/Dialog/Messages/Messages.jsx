@@ -6,7 +6,7 @@ import dialogsClasses from "../../Dialogs.module.css";
 
 const Messages = (props) => {
 
-	let messages = props.messagesData.map(m => <div>{m.message}</div>)
+	let messages = props.messagesData.map(m => <div key={m.id}>{m.message}</div>)
 
 	let newMessage = React.createRef();
 

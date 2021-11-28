@@ -6,7 +6,7 @@ import MessagesContainer from "./Dialog/Messages/MessagesContainer";
 
 const Dialogs = (props) => {
 
-	let dialogs = props.dialogsData.map(d => <DialogItem name={d.name} id={d.id}/>);
+	let dialogs = props.dialogsData.map(d => <DialogItem name={d.name} id={d.id} key={d.id}/>);
 
 	let addNewDialog = () => {
 		props.addNewDialog();

@@ -4,7 +4,7 @@ import headerClasses from './Header.module.css';
 const Header = () => {
 	return (
 		<header className={headerClasses.header}>
-			<img src=''/>
+			<img alt={'logo'} src=''/>
 		</header>
 	);
 }
