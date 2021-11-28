@@ -3,22 +3,74 @@ import usersStyle from './Users.module.css';
 
 
 let Users = (props) => {
+
+	if (props.users.length === 0) {
+		props.setUsers([
+				{
+					usersId: 1,
+					photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6iPDSqcgCcAtdEz_rPY0B-sxqMd7hz0Hlg&usqp=CAU',
+					followed: true,
+					fullName: 'Jhon',
+					status: 'Hey-hey',
+					location: {city: 'New York', country: 'USA'}
+				},
+				{
+					usersId: 2,
+					photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6iPDSqcgCcAtdEz_rPY0B-sxqMd7hz0Hlg&usqp=CAU',
+					followed: false,
+					fullName: 'Alex',
+					status: 'Newer give up!',
+					location: {city: 'Washington', country: 'USA'}
+				},
+				{
+					usersId: 3,
+					photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6iPDSqcgCcAtdEz_rPY0B-sxqMd7hz0Hlg&usqp=CAU',
+					followed: true,
+					fullName: 'Anna',
+					status: 'Yo',
+					location: {city: 'Moscow', country: 'Russia'}
+				},
+				{
+					usersId: 4,
+					photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6iPDSqcgCcAtdEz_rPY0B-sxqMd7hz0Hlg&usqp=CAU',
+					followed: false,
+					fullName: 'Nikolai',
+					status: 'Привет',
+					location: {city: 'Kiev', country: 'Ukraine'}
+				},
+			],
+		)
+	}
+
 	return (
 		<div>{
 			props.users.map(u => <div key={u.id}>
-				<div><img alt={'avatar'} src={u.photoUrl} className={usersStyle.usersPhoto}/></div>
-				<div>
-					<button>Follow</button>
+				<div className={usersStyle.usersPage}>
+					<div className={usersStyle.photoContainer}>
+						<div>
+							<img alt={'avatar'} src={u.photoUrl} className={usersStyle.usersPhoto}/>
+						</div>
+						<div className={usersStyle.toggleFollowBtn}>
+							{u.followed
+								? <button onClick={() => {
+									props.follow(u.id)
+								}}>Follow</button>
+								: <button onClick={() => {
+									props.unfollow(u.id)
+								}}>Unfollow</button>}
+						</div>
+					</div>
+					<div>
+						<div className={usersStyle.userName}>
+							<div>{u.fullName}</div>
+							<div>{u.status}</div>
+						</div>
+						<div className={usersStyle.locationInfo}>
+							<span>{u.location.city}, {u.location.country}</span>
+						</div>
+					</div>
 				</div>
-				<div>
-					<div>{u.fullName}</div>
-					<div>{u.status}</div>
-				</div>
-				<div>
-					<div>{u.location.country}</div>
-					<div>{u.location.city}</div>
-				</div>
-			</div>)};
+			</div>)
 			}</div>
 	)
 }

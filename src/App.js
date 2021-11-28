@@ -22,7 +22,7 @@ let App = (props) => {
 				<Routes>
 					<Route exact path='Profile' element={<Profile/>}/>
 					<Route exact path='Dialogs' element={<DialogsContainer/>}/>
-					<Route exact path='UsersContainer' element={<UsersContainer/>}/>
+					<Route exact path='Users' element={<UsersContainer/>}/>
 					<Route exact path='News' element={<News/>}/>
 					<Route exact path='Music' element={<Music/>}/>
 					<Route exact path='Settings' element={<Settings/>}/>

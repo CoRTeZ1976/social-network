@@ -3,16 +3,7 @@ let UNFOLLOW = 'UNFOLLOW';
 let SET_USERS = 'SET-USERS';
 
 let initialState = {
-	users: [
-		{id: 1, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6iPDSqcgCcAtdEz_rPY0B-sxqMd7hz0Hlg&usqp=CAU',
-			followed: true, fullName: 'Jhon', status: 'Hey-hey', location: {city: 'New York', country: 'USA'}},
-		{id: 2, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6iPDSqcgCcAtdEz_rPY0B-sxqMd7hz0Hlg&usqp=CAU',
-			followed: false, fullName: 'Alex', status: 'Newer give up!', location: {city: 'Washington', country: 'USA'}},
-		{id: 3, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6iPDSqcgCcAtdEz_rPY0B-sxqMd7hz0Hlg&usqp=CAU',
-			followed: true, fullName: 'Anna', status: 'Yo', location: {city: 'Moscow', country: 'Russia'}},
-		{id: 4, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6iPDSqcgCcAtdEz_rPY0B-sxqMd7hz0Hlg&usqp=CAU',
-			followed: false, fullName: 'Nikolai', status: 'Привет', location: {city: 'Kiev', country: 'Ukraine'}},
-	],
+	users: [],
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -40,7 +31,6 @@ const usersReducer = (state = initialState, action) => {
 			}
 		case SET_USERS:
 			return {...state, users: [...state.users, ...action.users]};
-
 		default:
 			return state;
 	}
