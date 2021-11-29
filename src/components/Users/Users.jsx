@@ -7,7 +7,7 @@ let Users = (props) => {
 	if (props.users.length === 0) {
 		props.setUsers([
 				{
-					usersId: 1,
+					id: 1,
 					photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6iPDSqcgCcAtdEz_rPY0B-sxqMd7hz0Hlg&usqp=CAU',
 					followed: true,
 					fullName: 'Jhon',
@@ -15,7 +15,7 @@ let Users = (props) => {
 					location: {city: 'New York', country: 'USA'}
 				},
 				{
-					usersId: 2,
+					id: 2,
 					photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6iPDSqcgCcAtdEz_rPY0B-sxqMd7hz0Hlg&usqp=CAU',
 					followed: false,
 					fullName: 'Alex',
@@ -23,7 +23,7 @@ let Users = (props) => {
 					location: {city: 'Washington', country: 'USA'}
 				},
 				{
-					usersId: 3,
+					id: 3,
 					photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6iPDSqcgCcAtdEz_rPY0B-sxqMd7hz0Hlg&usqp=CAU',
 					followed: true,
 					fullName: 'Anna',
@@ -31,7 +31,7 @@ let Users = (props) => {
 					location: {city: 'Moscow', country: 'Russia'}
 				},
 				{
-					usersId: 4,
+					id: 4,
 					photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6iPDSqcgCcAtdEz_rPY0B-sxqMd7hz0Hlg&usqp=CAU',
 					followed: false,
 					fullName: 'Nikolai',
@@ -53,11 +53,11 @@ let Users = (props) => {
 						<div className={usersStyle.toggleFollowBtn}>
 							{u.followed
 								? <button onClick={() => {
-									props.follow(u.id)
-								}}>Follow</button>
-								: <button onClick={() => {
 									props.unfollow(u.id)
-								}}>Unfollow</button>}
+								}}>unfollow</button>
+								: <button onClick={() => {
+									props.follow(u.id)
+								}}>Follow</button>}
 						</div>
 					</div>
 					<div>
@@ -71,7 +71,7 @@ let Users = (props) => {
 					</div>
 				</div>
 			</div>)
-			}</div>
+		}</div>
 	)
 }
 

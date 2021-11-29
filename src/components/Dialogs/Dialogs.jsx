@@ -13,7 +13,7 @@ const Dialogs = (props) => {
 	}
 
 	return (
-		<div>
+		<div className={dialogsClasses.container}>
 			<button onClick={addNewDialog}>Add new dialog</button>
 			<div className={dialogsClasses.dialogs}>
 				<div className={dialogsClasses.dialogItems}>
