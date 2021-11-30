@@ -52,12 +52,8 @@ let Users = (props) => {
 						</div>
 						<div className={usersStyle.toggleFollowBtn}>
 							{u.followed
-								? <button onClick={() => {
-									props.unfollow(u.id)
-								}}>unfollow</button>
-								: <button onClick={() => {
-									props.follow(u.id)
-								}}>Follow</button>}
+								? <button onClick={() => {props.follow(u.id)}}>Follow</button>
+								: <button onClick={() => {props.unfollow(u.id)}}>unfollow</button>}
 						</div>
 					</div>
 					<div>
