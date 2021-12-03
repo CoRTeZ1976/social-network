@@ -9,6 +9,7 @@ class Users extends React.Component {
 		super(props);
 		axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
 			this.props.setUsers(response.data.items)
+			console.log(response.data);
 		});
 	}
 
@@ -24,11 +25,12 @@ class Users extends React.Component {
 							</div>
 							<div className={usersStyle.toggleFollowBtn}>
 								{u.followed
+								{{/*Не приходит id через пропсы, который должен передаваться в акшн криэйтор через диспатч*/}}
 									? <button onClick={() => {
-										this.props.unfollow(u.id)
+										this.props.unfollow(this.users.id)
 									}}>Unfollow</button>
 									: <button onClick={() => {
-										this.props.follow(u.id)
+										this.props.follow(this.props.users.id)
 									}}>Follow</button>}
 							</div>
 						</div>
