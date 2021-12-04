@@ -9,9 +9,10 @@ class Users extends React.Component {
 		super(props);
 		axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
 			this.props.setUsers(response.data.items)
-			console.log(response.data);
 		});
 	}
+
+
 
 	render() {
 		return (
@@ -24,14 +25,11 @@ class Users extends React.Component {
 								     className={usersStyle.usersPhoto}/>
 							</div>
 							<div className={usersStyle.toggleFollowBtn}>
-								{u.followed
-								{{/*Не приходит id через пропсы, который должен передаваться в акшн криэйтор через диспатч*/}}
-									? <button onClick={() => {
-										this.props.unfollow(this.users.id)
-									}}>Unfollow</button>
-									: <button onClick={() => {
-										this.props.follow(this.props.users.id)
-									}}>Follow</button>}
+								{
+									u.followed
+										? <button onClick={() => {this.props.unfollow(u.id)}}>Unfollow</button>
+										: <button onClick={() => {this.props.follow(u.id)}}>Follow</button>
+								}
 							</div>
 						</div>
 						<div>
@@ -39,15 +37,17 @@ class Users extends React.Component {
 								<div>{u.name}</div>
 								<div>{u.status}</div>
 							</div>
-							{/*<div className={usersStyle.locationInfo}>
-							<span>{"u.location.city u.location.country"}</span>
-						</div>*/}
+							<div className={usersStyle.locationInfo}>
+								<span>{"u.location.city u.location.country"}</span>
+							</div>
 						</div>
 					</div>
 				</div>)
 			}</div>
 		)
 	}
+
+
 }
 
 export default Users;
