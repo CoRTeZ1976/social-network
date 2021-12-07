@@ -9,7 +9,6 @@ import {
 import React from "react";
 import * as axios from "axios";
 import Users from "./Users";
-import preloader from '../../asserts/images/loader.svg';
 import Preloader from "../Common/Preloader/Preloader";
 
 
