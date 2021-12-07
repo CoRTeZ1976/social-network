@@ -1,6 +1,6 @@
 import React from "react";
-import usersStyle from "./Users.module.css";
-import userPhoto from "../../asserts/images/images.png";
+import usersStyle from './Users.module.css';
+import userPhoto from "../../asserts/images/images.png"
 
 
 let Users = (props) => {
@@ -11,6 +11,7 @@ let Users = (props) => {
 	for (let i = 1; i <= pagesCount; i++) {
 		pages.push(i);
 	}
+
 	return (
 		<div>
 			<div>
@@ -21,7 +22,7 @@ let Users = (props) => {
 				})}
 			</div>
 			{
-				this.props.users.map(u => <div key={u.id}>
+				props.users.map(u => <div key={u.id}>
 					<div className={usersStyle.usersPage}>
 						<div className={usersStyle.photoContainer}>
 							<div>
@@ -32,10 +33,10 @@ let Users = (props) => {
 								{
 									u.followed
 										? <button onClick={() => {
-											this.props.unfollow(u.id)
+											props.unfollow(u.id)
 										}}>Unfollow</button>
 										: <button onClick={() => {
-											this.props.follow(u.id)
+											props.follow(u.id)
 										}}>Follow</button>
 								}
 							</div>
@@ -52,7 +53,7 @@ let Users = (props) => {
 					</div>
 				</div>)
 			}</div>
-	);
-};
+	)
+}
 
 export default Users;
