@@ -1,5 +1,6 @@
 import './App.css';
-import {Route, Routes} from "react-router-dom";
+import {Route} from "react-router-dom";
+import {Routes} from "react-router";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
@@ -20,12 +21,18 @@ let App = (props) => {
 			<Navbar/>
 			<div className='app-wrapper-content'>
 				<Routes>
-					<Route exact path='Profile' element={<ProfileContainer/>}/>
-					<Route exact path='Dialogs' element={<DialogsContainer/>}/>
-					<Route exact path='Users' element={<UsersContainer/>}/>
-					<Route exact path='News' element={<News/>}/>
-					<Route exact path='Music' element={<Music/>}/>
-					<Route exact path='Settings' element={<Settings/>}/>
+					<Route path='Profile/:userId'
+					       render={ () => <ProfileContainer/> }/>
+					<Route path='Dialogs'
+					       render={ () => <DialogsContainer/> }/>
+					<Route path='Users'
+					       render={ () => <UsersContainer/> }/>
+					<Route path='News'
+					       render={ () => <News/> }/>
+					<Route path='Music'
+					       render={ () => <Music/> }/>
+					<Route path='Settings'
+					       render={ () => <Settings/> }/>
 				</Routes>
 			</div>
 		</div>
