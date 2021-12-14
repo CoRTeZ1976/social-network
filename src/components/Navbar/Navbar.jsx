@@ -11,27 +11,27 @@ const Navbar = (props) => {
 		<nav className={navClasses.nav}>
 
 			<div className={navClasses.item}>
-				<NavLink to='/Profile' className={setActive}>Profile</NavLink>
+				<NavLink to='/profile' className={setActive}>Profile</NavLink>
 			</div>
 
 			<div className={navClasses.item}>
-				<NavLink to='/Dialogs' className={setActive}>Dialogs</NavLink>
+				<NavLink to='/dialogs' className={setActive}>Dialogs</NavLink>
 			</div>
 
 			<div className={navClasses.item}>
-				<NavLink to='/Users' className={setActive}>Users</NavLink>
+				<NavLink to='/users' className={setActive}>Users</NavLink>
 			</div>
 
 			<div className={navClasses.item}>
-				<NavLink to='/News' className={setActive}>News</NavLink>
+				<NavLink to='/news' className={setActive}>News</NavLink>
 			</div>
 
 			<div className={navClasses.item}>
-				<NavLink to='/Music' className={setActive}>Music</NavLink>
+				<NavLink to='/music' className={setActive}>Music</NavLink>
 			</div>
 
 			<div className={navClasses.item}>
-				<NavLink to='/Settings' className={setActive}>Settings</NavLink>
+				<NavLink to='/settings' className={setActive}>Settings</NavLink>
 			</div>
 			<div className={navClasses.item}>
 				<Sidebar/>

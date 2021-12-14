@@ -12,7 +12,6 @@ import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 
 
-
 let App = (props) => {
 
 	return (
@@ -21,18 +20,21 @@ let App = (props) => {
 			<Navbar/>
 			<div className='app-wrapper-content'>
 				<Routes>
-					<Route path='Profile/:userId'
-					       render={ () => <ProfileContainer/> }/>
-					<Route path='Dialogs'
-					       render={ () => <DialogsContainer/> }/>
-					<Route path='Users'
-					       render={ () => <UsersContainer/> }/>
-					<Route path='News'
-					       render={ () => <News/> }/>
-					<Route path='Music'
-					       render={ () => <Music/> }/>
-					<Route path='Settings'
-					       render={ () => <Settings/> }/>
+					<Route path='profile'
+					       element={<ProfileContainer/>}>
+						<Route path=':userId'
+						       element={<ProfileContainer/>}/>
+					</Route>
+					<Route path='dialogs'
+					       element={<DialogsContainer/>}/>
+					<Route path='users'
+					       element={<UsersContainer/>}/>
+					<Route path='news'
+					       element={<News/>}/>
+					<Route path='music'
+					       element={<Music/>}/>
+					<Route path='settings'
+					       element={<Settings/>}/>
 				</Routes>
 			</div>
 		</div>
