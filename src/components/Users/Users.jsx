@@ -27,7 +27,7 @@ let Users = (props) => {
 					<div className={usersStyle.usersPage}>
 						<div className={usersStyle.photoContainer}>
 							<div>
-								<NavLink to={'/profile' + u.id}>
+								<NavLink to={'/profile/' + u.id}>
 									<img alt={'avatar'} src={u.photos.small != null ? u.photos.small : userPhoto}
 									     className={usersStyle.usersPhoto}/>
 								</NavLink>

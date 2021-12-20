@@ -1,6 +1,5 @@
 import './App.css';
-import {Route} from "react-router-dom";
-import {Routes} from "react-router";
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
@@ -12,34 +11,27 @@ import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 
 
-let App = (props) => {
 
+let App = ( props ) => {
+	
 	return (
-		<div className='app-wrapper'>
+		<div className="app-wrapper">
 			<Header/>
 			<Navbar/>
-			<div className='app-wrapper-content'>
+			<div className="app-wrapper-content">
 				<Routes>
-					<Route path='profile'
-					       element={<ProfileContainer/>}>
-						<Route path=':userId'
-						       element={<ProfileContainer/>}/>
-					</Route>
-					<Route path='dialogs'
-					       element={<DialogsContainer/>}/>
-					<Route path='users'
-					       element={<UsersContainer/>}/>
-					<Route path='news'
-					       element={<News/>}/>
-					<Route path='music'
-					       element={<Music/>}/>
-					<Route path='settings'
-					       element={<Settings/>}/>
+					<Route path="profile" element={ <ProfileContainer/> }/>
+					<Route path="profile/:userId" element={ <ProfileContainer/> }/>
+					<Route path="dialogs" element={ <DialogsContainer/> }/>
+					<Route path="users" element={ <UsersContainer/> }/>
+					<Route path="news" element={ <News/> }/>
+					<Route path="music" element={ <Music/> }/>
+					<Route path="settings" element={ <Settings/> }/>
 				</Routes>
 			</div>
 		</div>
 	);
-}
+};
 
 export default App;
 
