@@ -12,7 +12,6 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 
 
 
-
 let App = ( props ) => {
 	
 	return (
