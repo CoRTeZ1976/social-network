@@ -3,7 +3,7 @@ import Profile from "./Profile";
 import * as axios from "axios";
 import {connect} from "react-redux";
 import {setUsersProfile} from "../../redux/profile-reducer";
-import { Outlet, useMatch } from "react-router-dom";
+import { useMatch } from "react-router-dom";
 
 
 
@@ -11,8 +11,8 @@ import { Outlet, useMatch } from "react-router-dom";
 class ProfileContainer extends React.Component {
 
 	componentDidMount() {
-		debugger;
-		let userId = this.props.profile ? this.props.match.params.userId : '2';
+
+		let userId = this.props.match ? this.props.match.params.userId : '2';
 		axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
 			.then(response => {
 				this.props.setUsersProfile(response.data);
@@ -23,7 +23,6 @@ class ProfileContainer extends React.Component {
 		return (
 			<div>
 				<Profile {...this.props} profile={this.props.profile}/>
-				<Outlet />
 			</div>
 		)
 	}
@@ -35,7 +34,7 @@ let mapStateToProps = state => ({
 
 
 const ProfileMatch = (props) => {
-debugger;
+
 	let match = useMatch('/profile/:userId');
 
 	return <ProfileContainer {...props} match={match} />;
