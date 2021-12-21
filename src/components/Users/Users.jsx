@@ -2,7 +2,6 @@ import React from "react";
 import usersStyle from './Users.module.css';
 import userPhoto from "../../asserts/images/images.png";
 import { NavLink } from "react-router-dom";
-import * as axios from "axios";
 import { subscribeAPI } from "../API/subscribeAPI";
 
 
@@ -40,16 +39,16 @@ let Users = ( props ) => {
 									u.followed
 										? <button onClick={ () => {
 											subscribeAPI.unfollowUser( u.id )
-											            .then( response => {
-												            if (response.data.resultCode === 0) {
+											            .then( data => {
+												            if (data.resultCode === 0) {
 													            props.unfollow( u.id );
 												            };
 											            } );
 										} }>Unfollow</button>
 										: <button onClick={ () => {
 											subscribeAPI.followUser( u.id )
-											            .then( response => {
-												            if (response.data.resultCode === 0) {
+											            .then( data => {
+												            if (data.resultCode === 0) {
 													            props.follow( u.id );
 												            };
 											            } );
