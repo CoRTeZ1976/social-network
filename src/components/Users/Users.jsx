@@ -2,12 +2,12 @@ import React from "react";
 import usersStyle from './Users.module.css';
 import userPhoto from "../../asserts/images/images.png";
 import { NavLink } from "react-router-dom";
-import { subscribeAPI } from "../API/subscribeAPI";
+
 
 
 
 let Users = ( props ) => {
-	
+	debugger
 	let pagesCount = Math.ceil( props.totalUsersCount / props.pageSize );
 	
 	let pages = [];
@@ -19,10 +19,12 @@ let Users = ( props ) => {
 		<div>
 			<div>
 				{ pages.map( p => {
+					
 					return (
-						<span className={ props.currentPage === p && usersStyle.selectedPage }
+						<span className={ props.currentPage === p ? usersStyle.selectedPage	: undefined }
+						      key={ p.id }
 						      onClick={ ( e ) => props.onPageChanged( p ) }>{ p }</span> );
-				} ) }
+					})}
 			</div>
 			{
 				props.users.map( u => <div key={ u.id }>
@@ -37,22 +39,14 @@ let Users = ( props ) => {
 							<div className={ usersStyle.toggleFollowBtn }>
 								{
 									u.followed
-										? <button onClick={ () => {
-											subscribeAPI.unfollowUser( u.id )
-											            .then( data => {
-												            if (data.resultCode === 0) {
-													            props.unfollow( u.id );
-												            };
-											            } );
-										} }>Unfollow</button>
-										: <button onClick={ () => {
-											subscribeAPI.followUser( u.id )
-											            .then( data => {
-												            if (data.resultCode === 0) {
-													            props.follow( u.id );
-												            };
-											            } );
-										} }>Follow</button>
+										? <button disabled={ props.followingInProgress.some( id => id === u.id ) }
+										          onClick={ () => {
+											          props.unfollow( true, u.id );
+										          } }>Unfollow</button>
+										: <button disabled={ props.followingInProgress.some( id => id === u.id ) }
+										          onClick={ () => {
+											          props.follow( true, u.id );
+										          } }>Follow</button>
 								}
 							</div>
 						</div>
