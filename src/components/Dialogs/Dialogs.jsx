@@ -2,6 +2,7 @@ import React from "react";
 import dialogsClasses from './Dialogs.module.css'
 import DialogItem from "./Dialog/DialogItem";
 import MessagesContainer from "./Dialog/Messages/MessagesContainer";
+import { Navigate } from "react-router-dom";
 
 
 const Dialogs = (props) => {
@@ -12,6 +13,8 @@ const Dialogs = (props) => {
 		props.addNewDialog();
 	}
 
+	if (!props.isAuth) return (<Navigate to={"/login"}/>);
+	
 	return (
 		<div className={dialogsClasses.container}>
 			<button onClick={addNewDialog}>Add new dialog</button>
