@@ -8,10 +8,12 @@ let ProfileInfo = (props) => {
 	if(!props.profile) {
 		return <Preloader />
 	}
+	
+	let plug = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6iPDSqcgCcAtdEz_rPY0B-sxqMd7hz0Hlg&usqp=CAU";
 
 	return (
 		<div>
-			<img src={props.profile.photos.large} alt=""/>
+			<img src={props.profile.photos.large != null ? props.profile.photos.small : plug} alt="avatar"/>
 			<div>Обо мне: {props.profile.aboutMe}</div>
 			<div>
 				<div>Страница в facebook:
