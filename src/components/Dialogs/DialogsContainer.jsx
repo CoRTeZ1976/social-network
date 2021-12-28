@@ -1,25 +1,25 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import Dialogs from "./Dialogs";
-import {addNewDialogActionCreator} from "../../redux/dialogs-reducer";
+import { addNewDialogActionCreator } from "../../redux/dialogs-reducer";
+import { WithAuthRedirectWrapper } from "../HOC/WithAuthRedirectWrapper";
 
 
 
 const mapStateToProps = state => {
-
+	
 	return {
 		dialogsData: state.dialogsPage.dialogsData,
-		isAuth: state.auth.isAuth,
-	}
-}
+	};
+};
 
 const mapDispatchToProps = dispatch => {
 	return {
-		addNewDialog: () => dispatch(addNewDialogActionCreator()),
-	}
-}
+		addNewDialog: () => dispatch( addNewDialogActionCreator() ),
+	};
+};
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
+let AuthRedirectWrapper = WithAuthRedirectWrapper( Dialogs );
 
-
+const DialogsContainer = connect( mapStateToProps, mapDispatchToProps )( AuthRedirectWrapper );
 
 export default DialogsContainer;

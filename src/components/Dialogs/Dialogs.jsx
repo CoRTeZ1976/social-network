@@ -12,8 +12,6 @@ const Dialogs = (props) => {
 	let addNewDialog = () => {
 		props.addNewDialog();
 	}
-
-	if (!props.isAuth) return (<Navigate to={"/login"}/>);
 	
 	return (
 		<div className={dialogsClasses.container}>
