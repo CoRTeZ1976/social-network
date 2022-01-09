@@ -1,8 +1,8 @@
 import React from "react";
-import dialogsClasses from './Dialogs.module.css'
+import dialogsClasses from './Dialogs.module.css';
 import DialogItem from "./Dialog/DialogItem";
 import MessagesContainer from "./Dialog/Messages/MessagesContainer";
-import { Navigate } from "react-router-dom";
+
 
 
 const Dialogs = (props) => {
