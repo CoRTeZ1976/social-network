@@ -1,5 +1,6 @@
 import React from "react";
 import Preloader from "../../Common/Preloader/Preloader";
+import ProfileStatus from "./ProfileStatus";
 
 
 
@@ -14,6 +15,7 @@ let ProfileInfo = (props) => {
 	return (
 		<div>
 			<img src={props.profile.photos.large != null ? props.profile.photos.small : plug} alt="avatar"/>
+			<ProfileStatus />
 			<div>Обо мне: {props.profile.aboutMe}</div>
 			<div>
 				<div>Страница в facebook:

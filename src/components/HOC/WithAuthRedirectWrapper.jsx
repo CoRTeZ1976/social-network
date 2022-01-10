@@ -12,7 +12,6 @@ export const WithAuthRedirectWrapper = ( Component ) => {
 	class RedirectWrapper extends React.Component {
 		render() {
 			if (!this.props.isAuth) return <Navigate to={ "/login" }/>;
-			
 			return <Component { ...this.props }/>;
 		}
 	}
