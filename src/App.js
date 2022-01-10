@@ -21,15 +21,15 @@ let App = ( props ) => {
 			<Navbar/>
 			<div className="app-wrapper-content">
 				<Routes>
-					<Route path="login" element={<Login/>}/>
 					<Route path="profile" element={ <ProfileContainer/> }>
 						<Route path=":userId" element={ <ProfileContainer/> }/>
 					</Route>
 					<Route path="dialogs" element={ <DialogsContainer/> }/>
 					<Route path="users" element={ <UsersContainer/> }/>
-					<Route path="news" element={ <News/> }/>
+					{/*<Route path="news" element={ <News/> }/>
 					<Route path="music" element={ <Music/> }/>
-					<Route path="settings" element={ <Settings/> }/>
+					<Route path="settings" element={ <Settings/> }/>*/}
+					<Route path="login" element={<Login/>}/>
 				</Routes>
 			</div>
 		</div>
