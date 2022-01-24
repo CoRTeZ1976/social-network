@@ -23,28 +23,32 @@ export default function LoginForm() {
 		<div>
 			<form onSubmit={ handleSubmit( onSubmit ) }>
 				<label>
-					First name:
-					<input
-						{ ...register( "firstName", {
-							required: "The field is required to fill in",
-						} ) }
+					Login:
+					<input placeholder={ "Email address or phone number" }
+					       { ...register( "login", {
+						       required: "The field is required to fill in",
+					       } ) }
 					/>
 				</label>
 				<div>
-					{ errors?.firstName && <p>{ errors?.firstName?.message || "Error!" }</p> }
+					{ errors?.login && <p>{ errors?.login?.message || "Error!" }</p> }
 				</div>
 				<label>
-					Last name:
-					<input
-						{ ...register( "lastName", {
-							required: "The field is required to fill in",
-						} ) }
+					Password:
+					<input type={ "password" } name={ "password" } placeholder={ "Password" }
+					       { ...register( "password", {
+						       required: "The field is required to fill in",
+					       } ) }
 					/>
 				</label>
 				<div>
-					{ errors?.lastName && <p>{ errors?.lastName?.message || "Error!" }</p> }
+					{ errors?.password && <p>{ errors?.password?.message || "Error!" }</p> }
 				</div>
-				<input type="submit" disabled={ !isValid }/>
+				<div>
+					<a href="https://google.com">Forgotten password?</a>
+				</div>
+				<input type="submit" disabled={ !isValid } value={ "Sign in" }/>
+				<input type="button" value={ "Create new account" }/>
 			</form>
 		</div>
 	);

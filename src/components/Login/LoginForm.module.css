@@ -56,7 +56,8 @@ label {
 }
 
 button[type="submit"],
-input[type="submit"] {
+input[type="submit"],
+input[type="button"] {
     background: #ec5990;
     color: black;
     text-transform: uppercase;
