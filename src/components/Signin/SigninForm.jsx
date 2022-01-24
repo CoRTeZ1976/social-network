@@ -1,10 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import './LoginForm.module.css';
+import './SigninForm.module.css';
 
 
 
-export default function LoginForm() {
+export default function SigninForm() {
 	const {
 		register,
 		handleSubmit,
@@ -18,8 +18,6 @@ export default function LoginForm() {
 		console.log( JSON.stringify( data ) );
 		reset();
 	};
-	
-	const signinRef = React.createRef( "../Signin/signin" );
 	
 	return (
 		<div>
@@ -44,7 +42,7 @@ export default function LoginForm() {
 					<a href="https://google.com">Forgotten password?</a>
 				</div>
 				<input type="submit" disabled={ !isValid } value={ "Log in" }/>
-				<input type="button" value={ "Signin" } ref={ signinRef }/>
+				<input type="button" value={ "Signin" }/>
 			</form>
 		</div>
 	);
