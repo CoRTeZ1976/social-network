@@ -34,7 +34,7 @@ const Messages = ( props ) => {
 						{ ...register( "message", {required: "Message is empty"} ) }
 					/>
 					<div>
-						{ errors?.message && <p>{ errors?.message?.message || "Error!" }</p> }
+						{ errors?.name && <p>{ errors?.name?.message || "Error!" }</p> }
 					</div>
 					<input type="submit"
 					       disabled={ !isValid }
