@@ -1,43 +1,49 @@
 import React from "react";
-import messagesClasses from './Messages.module.css'
+import messagesClasses from './Messages.module.css';
 import dialogsClasses from "../../Dialogs.module.css";
+import { useForm } from "react-hook-form";
 
 
 
-const Messages = (props) => {
-
-	let messages = props.messagesData.map(m => <div key={m.id}>{m.message}</div>)
-
-	let newMessage = React.createRef();
-
-	let sendMessage = () => {
-		props.sendMessage();
+const Messages = ( props ) => {
+	
+	let messages = props.messagesData.map( m => <div key={ m.id }>{ m.message } </div> );
+	
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: {errors, isValid},
+	} = useForm( {
+		mode: "onBlur",
+	} );
+	
+	const onSubmit = data => {
+		props.sendMessage( data.message );
+		reset();
 	};
-
-	let onMessageTextChange = () => {
-		let text = newMessage.current.value;
-		props.updateNewMessageText(text);
-	}
-
+	
 	return (
-		<div className={messagesClasses.message}>
-			<div>{props.message}</div>
-			<div className={dialogsClasses.messages}>
-				{messages}
-				<div>
+		<div className={ messagesClasses.message }>
+			<div>{ props.message }</div>
+			<div className={ dialogsClasses.messages }>
+				{ messages }
+				<form onSubmit={ handleSubmit( onSubmit ) }>
 					<textarea
-						placeholder={'Enter your message'}
-						onChange={onMessageTextChange}
-						ref={newMessage}
-						value={props.newMessageText}
+						placeholder={ 'Enter your message' }
+						{ ...register( "message", {required: "Message is empty"} ) }
 					/>
-				</div>
-				<div>
-					<button onClick={sendMessage}>Send</button>
-				</div>
+					<div>
+						{ errors?.message && <p>{ errors?.message?.message || "Error!" }</p> }
+					</div>
+					<input type="submit"
+					       disabled={ !isValid }
+					       value={ "Send message" }
+					/>
+				</form>
 			</div>
 		</div>
 	);
-}
+};
 
 export default Messages;

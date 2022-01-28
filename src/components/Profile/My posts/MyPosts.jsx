@@ -18,8 +18,6 @@ const MyPosts = ( props ) => {
 	} );
 	
 	const onSubmit = data => {
-		
-		console.log( JSON.stringify( data ) );
 		props.addPost( data.post );
 		reset();
 	};
@@ -39,7 +37,6 @@ const MyPosts = ( props ) => {
 					       disabled={ !isValid }
 					       value={ "Add post" }
 					/>
-				
 				</form>
 			</div>
 			{ posts }
