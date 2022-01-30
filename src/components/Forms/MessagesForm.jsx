@@ -23,12 +23,13 @@ export default function MessagesForm( props ) {
 	} = props;
 	
 	const onSubmit = data => {
-		console.log( data );
-		dispatchFunc( data );
+		if (fieldName === "post") {
+			dispatchFunc( data.post );
+		} else if (fieldName === "message") {
+			dispatchFunc( data.message );
+		}
 		reset();
 	};
-	
-	console.log( errors );
 	
 	return (
 		<form onSubmit={ handleSubmit( onSubmit ) }>
