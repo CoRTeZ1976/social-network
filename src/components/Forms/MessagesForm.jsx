@@ -34,6 +34,7 @@ export default function MessagesForm( props ) {
 	return (
 		<form onSubmit={ handleSubmit( onSubmit ) }>
 			<textarea
+				name={ fieldName }
 				placeholder={ placeHolder }
 				{ ...register( `${ fieldName }`, {required: requiredText} ) } />
 			<div>
