@@ -56,8 +56,8 @@ const LoginForm = ( props ) => {
 	);
 };
 
-const mapStateToProps = state => {
-	isAuth: state.auth.isAuth;
-};
+const mapStateToProps = state => ( {
+	isAuth: state.auth.isAuth,
+} );
 
 export default connect( mapStateToProps, {login} )( LoginForm );

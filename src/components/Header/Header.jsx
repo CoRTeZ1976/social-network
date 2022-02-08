@@ -1,16 +1,21 @@
 import React from "react";
 import headerClasses from './Header.module.css';
-import { NavLink } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 
 
 const Header = ( props ) => {
 	return (
 		<header className={ headerClasses.header }>
-			<img alt={ 'logo' } src="#"/>
+			<div><img alt={ 'logo' } src="#"/></div>
+			
 			<div className={ headerClasses.loginBlock }>
-				{ props.isAuth ? props.login : <NavLink to="/login">Login</NavLink> }
+				{ props.isAuth
+					? <div> { props.login } - <button name={ "button" } className={ "logOut" } type={ "button" }>Log
+						out</button></div>
+					: <Navigate replace to={ "/login" }/> }
 			</div>
+		
 		</header>
 	);
 };

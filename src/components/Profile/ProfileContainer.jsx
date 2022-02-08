@@ -28,6 +28,7 @@ class ProfileContainer extends React.Component {
 let mapStateToProps = state => ( {
 	profile: state.profilePage.profile,
 	status: state.profilePage.status,
+	isAuth: state.profilePage.isAuth,
 } );
 
 const ProfileMatch = ( props ) => {
