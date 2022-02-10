@@ -10,7 +10,7 @@ const Header = ( props ) => {
 			<div><img alt={ 'logo' } src="#"/></div>
 			
 			<div className={ headerClasses.loginBlock }>
-				{ props.isAuth ? <div> { props.login } </div> : <div></div> }
+				{ props.isAuth ? <div> { props.login } </div> : <div>{ props.logout }</div> }
 			</div>
 		
 		</header>
