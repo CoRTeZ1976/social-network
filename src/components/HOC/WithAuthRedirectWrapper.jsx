@@ -9,9 +9,10 @@ let mapStateToPropsForRedirect = state => ( {
 } );
 
 export const WithAuthRedirectWrapper = ( Component ) => {
+	
 	class RedirectWrapper extends React.Component {
 		render() {
-			if (!this.props.isAuth) return <Navigate replace to={ "/login" }/>;
+			if (!this.props.isAuth) return <Navigate to={ "/login" } replace={ true }/>;
 			return <Component { ...this.props }/>;
 		}
 	}

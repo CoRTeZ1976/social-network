@@ -40,7 +40,7 @@ const ProfileMatch = ( props ) => {
 };
 
 export default compose(
-	connect( mapStateToProps, {getUsersProfile, getUserStatus, updateUserStatus: updateUserStatus} ),
+	connect( mapStateToProps, {getUsersProfile, getUserStatus, updateUserStatus} ),
 	WithAuthRedirectWrapper,
 )( ProfileMatch );
 
