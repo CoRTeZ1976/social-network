@@ -17,15 +17,16 @@ export const usersAPI = {
 	},
 	followUser( userId ) {
 		return instance.post( `follow/${ userId }` )
-		               .then( response => response.data );
+		               .then( response => response );
 	},
 	unfollowUser( userId ) {
 		return instance.delete( `follow/${ userId }` )
-		               .then( response => response.data );
+		               .then( response => response );
 	},
 	getProfile( userId ) {
 		return instance.get( `profile/${ userId }` )
 		               .then( response => response.data );
+		
 	},
 	getUserStatus( userId ) {
 		return instance.get( `profile/status/${ userId }` )
@@ -35,13 +36,17 @@ export const usersAPI = {
 		return instance.put( `profile/status`, {status} )
 		               .then( response => response.data );
 	},
-	get() {
+	getAuthData() {
 		return instance.get( `auth/me` )
 		               .then( response => response.data );
 		
 	},
 	login( email, password, rememberMe = false ) {
-		return instance.post( `auth/login`, {email, password, rememberMe} );
+		return instance.post( `auth/login`, {email, password, rememberMe} )
+		               .then( response => {
+			               console.log( response );
+			               return response;
+		               } );
 	},
 	logout() {
 		return instance.delete( `auth/login` );

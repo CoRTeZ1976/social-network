@@ -44,21 +44,21 @@ const setUserStatus = status => ( {type: SET_USER_STATUS, status} );
 export const getUsersProfile = ( userId ) => {
 	return ( dispatch ) => {
 		usersAPI.getProfile( userId )
-		        .then( data => {
-			        dispatch( setUsersProfile( data ) );
+		        .then( response => {
+			        dispatch( setUsersProfile( response ) );
 		        } );
 	};
 };
 export const getUserStatus = ( userId ) => ( dispatch ) => {
 	usersAPI.getUserStatus( userId )
-	        .then( data => {
-		        dispatch( setUserStatus( data ) );
+	        .then( response => {
+		        dispatch( setUserStatus( response ) );
 	        } );
 };
 export const updateUserStatus = ( status ) => ( dispatch ) => {
 	usersAPI.updateUserStatus( status )
-	        .then( data => {
-		        if (data.resultCode === 0) {
+	        .then( response => {
+		        if (response.resultCode === 0) {
 			        dispatch( setUserStatus( status ) );
 		        }
 	        } );
